@@ -6,31 +6,27 @@ import javax.swing.*;
 import java.util.Scanner;
 
 public class SofkaU {
-    public Persona persona;
 
     public SofkaU() {
     }
 
     public Persona agregarInformacion(){
-        persona.setNombreUsuario(agregarDatos("Nombre"));
-        persona.setCelular(agregarDatos("Numero Celular"));
-        persona.setEdad(agregarDatos("edad"));
-
+        String nombre = JOptionPane.showInputDialog("Ingres su nombre por favor");
+        String celular = JOptionPane.showInputDialog("Ingres su numero de celular por favor");
+        String edad = JOptionPane.showInputDialog("Ingres su edad por favor");
+        Persona persona = new Persona();
+        persona.nombreUsuario=nombre;
+        persona.celular=celular;
+        persona.edad =edad;
         return persona;
-
     }
 
     public void mostrarMensaje(){
-        persona = agregarInformacion();
-        JOptionPane.showInputDialog(null,"Bienvenido señor " + persona.getNombreUsuario()
-                + "es un placer para nosotros contar con una persona de" + persona.getEdad()
-            + "proximamente nos comunicaremos con usted al numero + " + persona.getCelular());
 
-    }
+        Persona persona = agregarInformacion();
+        JOptionPane.showMessageDialog(null,"Bienvenido señor "+ (persona.nombreUsuario)
+                + " es un placer para nosotros contar con una persona de " + (persona.edad) + " años." +
+                " \n Proximamente nos comunicaremos con usted al numero " + (persona.celular) +"\n Feliz día");
 
-    public String agregarDatos(String tipoDeDato){
-        String dato;
-        dato = JOptionPane.showInputDialog(("Ingrese por favor su " + tipoDeDato));
-        return dato;
     }
 }

@@ -3,7 +3,7 @@ package com.tallerproductividad.sofkau.entity;
 public class Persona {
     public String nombreUsuario;
     public String edad;
-    public String Celular;
+    public String celular;
 
     public Persona() {
     }
@@ -25,10 +25,10 @@ public class Persona {
     }
 
     public String getCelular() {
-        return Celular;
+        return celular;
     }
 
     public void setCelular(String celular) {
-        Celular = celular;
+        celular = celular;
     }
 }
